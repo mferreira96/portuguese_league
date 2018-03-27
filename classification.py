@@ -5,6 +5,7 @@ def print_line(position, team, games, wins, draws, losts, scored_goals, conceded
   print("{:^6}".format(position), "{:^20}".format(team), "{:^4}".format(games),  "{:^4}".format(wins),  "{:^4}".format(draws),  "{:^4}".format(losts),  "{:^4}".format(scored_goals),  "{:^4}".format(conceded_goals),  "{:^4}".format(points))
 
 def obtain_team_info(team_info):
+  #parse the information
   position = list(team_info.find_all("td"))[1].get_text().strip()
   team = list(team_info.find("td", class_="team").children)[1].get_text().strip()
   number_of_games = list(team_info.find_all("td"))[4].get_text().strip()
