@@ -18,15 +18,15 @@ http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python
 ```
 
 
-
-# How to use it?
+# How to install?
 
   ```python
   pip install beautifulsoup4
-  py classification.py
-  py journey.py
   ```  
 # Output
 
   ## Classification
+  ```python
+  py classification.py
+  ```
   ![classification](images/classification_output.PNG)
