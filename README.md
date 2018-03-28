@@ -10,6 +10,15 @@ http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python
   - classification.py -> Gives the actual classification of the Portugues league 
   - journey.py -> Gives the games of a specific journey 
 
+# Requirements
+
+```
+  Python 3.x
+  Beautifulsoup 4
+```
+
+
+
 # How to use it?
 
   ```python
