@@ -1,8 +1,8 @@
 # 1. About
   These project is about the Portuguese league, there are two files with different objectives:
 
-  - classification.py -> Gives the actual classification of the Portugues league 
-  - journey.py -> Gives the games of a specific journey 
+  - [classification.py](https://github.com/mferreira96/football_games/blob/master/classification.py) -> Gives the actual classification of the Portugues league 
+  - [journey.py](https://github.com/mferreira96/football_games/blob/master/journey.py) -> Gives the games of a specific journey 
 
 # 2. Requirements
 
