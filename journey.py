@@ -62,10 +62,16 @@ def printLiveGame(info):
 
 
 def main():
+
+  value_requested = int(sys.argv[1])
+
   if len(sys.argv) > 1:
-    journey(sys.argv[1])
+    if value_requested > 0 and value_requested < 35:
+      journey(value_requested)
+    else:
+      print("The journey that you requested does not exist, there are only 34 journeys")  
   else:
-    journey(-1)  
+    journey(-1)
     
 
 if __name__ == "__main__":
