@@ -22,6 +22,8 @@ def journey(journey_number):
       printDate(info)
     elif "JgTerminado" in info.get("class"):
       printFinishedGame(info)
+    elif "live" in info.get("class"):
+      printLiveGame(info)  
     else:
       printGame(info)  
 
@@ -36,7 +38,7 @@ def printGame(info):
   time = list(info.find_all("span"))[1].get_text().strip()
   opponent = list(info.find_all("span"))[2].get_text().strip()
 
-  print("{:>15}".format(home), "{:6}".format(time), "{:15}".format(opponent), sep="  ")
+  print("{:>20}".format(home), "{:6}".format(time), "{:20}".format(opponent), sep="  ")
       
 def printFinishedGame(info):
 
@@ -45,7 +47,19 @@ def printFinishedGame(info):
   opponent_score = list(info.find_all("span"))[2].get_text().strip()
   opponent = list(info.find_all("span"))[3].get_text().strip()
 
-  print("{:>20}".format(home), "{:>6}".format(home_score), " - ", "{:6}".format(opponent_score), "{:20}".format(opponent), sep="  ")
+  print("{:>20}".format(home), "{:>2}".format(home_score), ":", "{:3}".format(opponent_score), "{:20}".format(opponent), sep=" ")
+
+
+def printLiveGame(info):
+
+  live = list(info.find_all("span"))[0].get_text().strip()
+  home = list(info.find_all("span"))[1].get_text().strip()
+  home_score = list(info.find_all("span"))[2].get_text().strip()
+  opponent_score = list(info.find_all("span"))[3].get_text().strip()
+  opponent = list(info.find_all("span"))[4].get_text().strip()
+
+  print("{:>20}".format(home), "{:>2}".format(home_score), ":", "{:3}".format(opponent_score), "{:20}".format(opponent), live, sep=" ")
+
 
 def main():
   if len(sys.argv) > 1:
