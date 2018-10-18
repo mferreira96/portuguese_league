@@ -1,4 +1,4 @@
-import requests
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 def print_line(position, team, games, wins, draws, losts, scored_goals, conceded_goals, points):
@@ -18,14 +18,17 @@ def obtain_team_info(team_info):
   
   print_line(position, team, number_of_games, number_of_wins, number_of_draws, number_of_losts, number_of_scored_goals, number_of_scored_conceded, points)
 
-def classification(): 
-  myResults_file = requests.get("http://www.maisfutebol.iol.pt/resultadoseclassificacoes/128/Portugal/Primeira-Liga")
-
-  soup = BeautifulSoup(myResults_file.content, "html.parser")
+def classification():
+  url =  "http://www.maisfutebol.iol.pt/resultadoseclassificacoes/128/Portugal/Primeira-Liga"
+  
+  content = urlopen(url).read()
+  
+  soup = BeautifulSoup(content, "lxml")
 
   table = soup.find("table", class_="tableJogosClass")
+  
   tr_tag = list(table.find_all("tr"))
-
+  
   size_of_array = len(tr_tag)
 
   # to elimnate two arrows that are not necessary
